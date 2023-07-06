@@ -1,6 +1,6 @@
 app-id: io.github.GourmandRecipeManager.Gourmand
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '43'
 sdk: org.gnome.Sdk
 command: gourmand
 
@@ -16,12 +16,12 @@ modules:
       build-args:
         - --share=network
     build-commands:
-      - python3 -m pip install --upgrade pip setuptools wheel
-      - pip3 install pyenchant Sphinx --no-warn-script-location
+      - python3 -m pip install --upgrade pip setuptools wheel --no-warn-script-location
+      - pip3 install pyenchant pygobject Sphinx --no-warn-script-location
       - pip3 install --prefix=/app .[epub-export,mycookbook,pdf-export,spellcheck,web-import]
       - install -Dm644 data/io.github.GourmandRecipeManager.Gourmand.desktop -t /app/share/applications/
       - install -Dm644 data/io.github.GourmandRecipeManager.Gourmand.svg -t /app/share/icons/hicolor/scalable/apps/
     sources:
       - type: git
-        branch: main
-        url: https://github.com/GourmandRecipeManager/gourmand
+        branch: flatpak
+        url: file:///home/sean/git/gourmand
