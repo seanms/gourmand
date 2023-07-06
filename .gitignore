@@ -11,6 +11,7 @@ __pycache__/
 gourmet.appdata.xml
 gourmet.desktop
 /development.txt
+.flatpak-builder
 
 # Test outputs
 tests/recipe_files/athenos1.gourmetcleaned.mx2  
